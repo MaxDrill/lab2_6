@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import sys
 
 if __name__ == '__main__':
@@ -9,6 +8,7 @@ if __name__ == '__main__':
         info = input(">>> ").lower()
         if info == 'exit':
             break
+
         elif info == 'add':
             dest = input("What destination do you need? ")
             numb = int(input("What number of the train? "))
@@ -21,6 +21,7 @@ if __name__ == '__main__':
             train.append(trainDct)
             if len(train) > 1:
                 train.sort(key=lambda item: item.get('flight_date', ''))
+
         elif info == 'list':
             line = '+-{}-+-{}-+-{}-+-{}-+'.format(
                 '-' * 4,
@@ -38,6 +39,7 @@ if __name__ == '__main__':
                 )
             )
             print(line)
+
             for i, item in enumerate(train, 1):
                 print(
                     '| {:>4} | {:<30} | {:<20} | {:>18} |'.format(
@@ -65,6 +67,7 @@ if __name__ == '__main__':
                     )
             if count == 0:
                 print("We couldn't find this type of plane")
+
         elif info == 'help':
             print("command list:\n")
             print("add - add information about a flight;")
